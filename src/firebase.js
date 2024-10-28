@@ -29,6 +29,7 @@ const signup = async (name,email, password) => {
           authProvider: "local",
           email
       })
+      toast.success("Successfully Registerd...")
     } catch (error) {
         console.log(error)
        toast.error(error.code.split("/")[1].split("-").join(" "))
@@ -38,6 +39,7 @@ const signup = async (name,email, password) => {
 const login = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password)
+        toast.success("Successfully Login...")
     } catch (error) {
         console.log(error)
         toast.error(error.code.split("/")[1].split("-").join(" "))
